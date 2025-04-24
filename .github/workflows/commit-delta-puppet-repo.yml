@@ -7,9 +7,9 @@ jobs:
   commit:
     runs-on: ubuntu-latest
     env:
-      REMOTE: ProjectIgnis/DeltaPuppetOfStrings.git
-      DESTINATION: DeltaPuppetOfStrings
-      BASE_SHA: 20220912
+      REMOTE: ProjectIgnis/DeltaBagooska.git
+      DESTINATION: DeltaBagooska
+      BASE_SHA: 20250419
     steps:
     - uses: actions/checkout@v1
     - name: Install sqlite3
@@ -19,7 +19,7 @@ jobs:
     - name: Clone destination repository
       run: |
         cd $HOME
-        git clone https://${{ secrets.DEPLOY_TOKEN }}@github.com/$REMOTE
+        git clone https://${{ secrets.DEPLOY_TOKEN_BAGOOSKA }}@github.com/$REMOTE
         mkdir -p $DESTINATION
     - name: Copy new CDBs only
       run: |
